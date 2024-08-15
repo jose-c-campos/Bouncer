@@ -11,13 +11,15 @@ import FirebaseAuth
 
 class CreateEventViewModel: ObservableObject {
     
-    func uploadEvent(caption: String) async throws {
+    func uploadEvent(caption: String, price: Float) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let event = Event(
             ownerUid: uid,
             caption: caption,
             timestamp: Timestamp(),
+            price: price,
             likes: 0
+            
         )
         try await EventService.uploadEvent(event)
     }
