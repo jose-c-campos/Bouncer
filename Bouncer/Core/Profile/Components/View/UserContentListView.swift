@@ -49,9 +49,20 @@ struct UserContentListView: View {
                 }
             }
             
-            LazyVStack {
-                ForEach(viewModel.events) { event in
-                    EventCell(event: event)
+            // Content based on selected filter
+            ScrollView {
+                if selectedFilter == .events {
+                    LazyVStack {
+                        ForEach(viewModel.events) { event in
+                            EventCell(event: event)
+                        }
+                    }
+                } else if selectedFilter == .tickets {
+                    LazyVStack {
+                        ForEach(viewModel.tickets) { ticket in
+                            TicketCell(ticket: ticket)
+                        }
+                    }
                 }
             }
         }

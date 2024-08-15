@@ -14,10 +14,10 @@ import Firebase
 import FirebaseAuth
 import SwiftUI
 
-class TicketViewModel: ObservableObject {
+class TicketCreationViewModel: ObservableObject {
     @Published var QRCodeImage : UIImage?
     @Published var currentUser: User?
-    var ticket: Ticket
+    
     let event: Event
     private var cancellables = Set<AnyCancellable>()
     
@@ -53,8 +53,11 @@ class TicketViewModel: ObservableObject {
             print(pngData)
             QRCodeImage = UIImage(data: pngData)
             Task {
-                let qrCodeURL = try await uploadTicketImage()
-                try await uploadTicket(qrCodeURL: qrCodeURL)
+                if let qrCodeURL = try await uploadTicketImage() {
+                    try await uploadTicket(qrCodeURL: qrCodeURL)
+                } else {
+                    print("Failed to upload QR code image")
+                }
             }
         }
     }
@@ -77,18 +80,19 @@ class TicketViewModel: ObservableObject {
         }
         return (UIImage(systemName: "XMark") ?? UIImage()).pngData()
     }
+
     
     // Method to upload the event image
     func uploadTicketImage() async throws -> String? {
         let path = "ticket_QR_Code_images"
         guard let image = QRCodeImage else { return nil }
-        guard let imageUrl = try? await ImageUploader.uploadImage(image, path: path) else { return nil }
+        guard let imageUrl = try? await ImageUploader.uploadTicketImage(image, path: path) else { return nil }
         return imageUrl
     }
     
     func uploadTicket(qrCodeURL: String) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        self.ticket = Ticket(
+        let ticket = Ticket(
             eventId: event.id,
             eventOwnerUid: event.ownerUid,
             ticketOwnerUid: uid,
@@ -100,6 +104,6 @@ class TicketViewModel: ObservableObject {
             timestamp: Timestamp(),
             valid: true
         )
-        try await TicketService.uploadTicket(self.ticket)
+        try await TicketService.uploadTicket(ticket)
     }
 }

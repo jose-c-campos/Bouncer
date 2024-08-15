@@ -9,11 +9,16 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-struct Event: Identifiable, Codable {
+struct Event: Identifiable, Codable, Hashable {
     @DocumentID var eventID: String?
     
     let ownerUid: String
+    let name: String
+    let dateTime: Date
+    let address: String
+    let price: Float
     let caption: String
+    var imageURL: String?
     let timestamp: Timestamp
     var likes: Int
     

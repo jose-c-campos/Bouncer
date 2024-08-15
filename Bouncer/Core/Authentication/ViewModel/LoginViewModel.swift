@@ -10,10 +10,12 @@ import Foundation
 class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
+    @Published var validLogin = true
     
     @MainActor
     func login() async throws {
-        try await AuthService.shared.login(
+        validLogin = true
+        validLogin = try await AuthService.shared.login(
             withEmail: email,
             password: password
         )

@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct CreateEventView: View {
+    var onPostComplete: (() -> Void)?
     @StateObject var viewModel = CreateEventViewModel()
     @State private var caption = ""
+    @State private var name = ""
+    @State private var dateTime = Date()
+    @State private var address = ""
     @State private var price: Float = 0.0
+    @State private var selectedImage: UIImage?
+    @State private var imagePickerPresented = false
     @Environment (\.dismiss) var dismiss
     
     private var user: User? {
@@ -24,59 +31,147 @@ struct CreateEventView: View {
             return formatter
     }
     
+    // Function to clear all fields
+    private func clearFields() {
+        caption = ""
+        name = ""
+        dateTime = Date()
+        price = 0.0
+        address = ""
+        viewModel.selectedItem = nil
+        viewModel.eventImage = nil
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
-                HStack(alignment: .top){
+                HStack(alignment: .top) {
                     CircularProfileImageView(user: user, size: .small)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(user?.username ?? "")
                             .fontWeight(.semibold)
-                        
-                        TextField("Launch an event...", text: $caption, axis: .vertical)
-                        TextField("Ticket Price: ", value: $price, formatter: numberFormatter)
-                            .keyboardType(.decimalPad)
                     }
                     .font(.footnote)
                     
                     Spacer()
+                }
+                .padding(.bottom, 20)
+                
+                // Event Name Field
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Event Name*")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
                     
-                    if !caption.isEmpty {
-                        Button {
-                            caption = ""
-                        } label: {
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .frame(width: 12, height: 12)
-                                .foregroundColor(.gray)
-                        }
+                    TextField("Enter the event name...", text: $name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                .padding(.bottom, 20)
+                
+                // Event Caption Field
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Event Description")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    
+                    TextField("Describe your event...", text: $caption, axis: .vertical)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                .padding(.bottom, 20)
+                
+                // Event Address Field
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Event Address*")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    
+                    TextField("Enter the event address...", text: $address)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                .padding(.bottom, 20)
+                
+                // Event Date-Time Picker and Ticket Price Field
+                HStack(spacing: 20) {
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("Event Date and Time*")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                        
+                        DatePicker("", selection: $dateTime, displayedComponents: [.date, .hourAndMinute])
+                            .datePickerStyle(CompactDatePickerStyle())
+                            .labelsHidden()
                     }
                     
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("Ticket Price*")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                        
+                        TextField("Enter price", value: $price, formatter: numberFormatter)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 100)
+                            .multilineTextAlignment(.center)
+                    }
                 }
+                .padding(.bottom, 20)
+                
+                // Photos Picker for Event Image
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Event Image")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    
+                    PhotosPicker(selection: $viewModel.selectedItem) {
+                        if let image = viewModel.eventImage {
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 200, height: 200)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        } else {
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                                .frame(width: 200, height: 200)
+                                .overlay(
+                                    Text("Select Image")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.blue)
+                                )
+                        }
+                    }
+                
+                }
+                    
                 Spacer()
             }
             .padding()
             .navigationTitle("New Event")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(.black)
-                }
-                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Post") {
                         Task {
-                            try await viewModel.uploadEvent(caption: caption, price: price)
+                            let imageURL = try await viewModel.uploadEventImage()
+                            try await viewModel.uploadEvent(
+                                name: name,
+                                dateTime: dateTime,
+                                address: address,
+                                price: price,
+                                caption: caption,
+                                imageURL: imageURL
+                            )
+                            clearFields()
+                            onPostComplete?()
                             dismiss()
                         }
                     }
-                    .opacity(caption.isEmpty ? 0.5 : 1.0)
-                    .disabled(caption.isEmpty)
+                    .opacity(name.isEmpty || address.isEmpty || price <= 0.50 ? 0.5 : 1.0)
+                    .disabled(name.isEmpty || address.isEmpty || price <= 0.50)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)

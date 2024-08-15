@@ -28,17 +28,20 @@ struct BouncerTabView: View {
                 .onAppear { selectedTab = 1 }
                 .tag(1)
             
-            CreateEventView()
+            CreateEventView() {
+                selectedTab = 0
+            }
                 .tabItem {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 24))
                 }
                 .onAppear { selectedTab = 2 }
                 .tag(2)
             
-            ActivityView()
+            ScannerView()
                 .tabItem {
                     Image(systemName: selectedTab == 3 ? "heart.fill" : "heart")
-                        .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
+                        .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
                 }
                 .onAppear { selectedTab = 3 }
                 .tag(3)
@@ -46,19 +49,11 @@ struct BouncerTabView: View {
             CurrentUserProfileView()
                 .tabItem {
                     Image(systemName: selectedTab == 4 ? "person.fill" : "person")
-                        .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
+                        .environment(\.symbolVariants, selectedTab == 4 ? .fill : .none)
                 }
                 .onAppear { selectedTab = 4 }
                 .tag(4)
         }
-        .onChange(of: selectedTab, perform: { newValue in
-            showCreateEventView = selectedTab == 2
-        })
-        .sheet(isPresented: $showCreateEventView, onDismiss: {
-            selectedTab = 0
-        }, content: {
-            CreateEventView()
-        })
         .tint(.black)
     }
 }

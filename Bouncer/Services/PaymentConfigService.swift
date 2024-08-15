@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class PaymentConfigService {
+    
+    var paymentIntentClientSecret: String?
+    static var shared: PaymentConfigService = PaymentConfigService()
+    
+    private init() { }
+}

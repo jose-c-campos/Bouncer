@@ -51,6 +51,22 @@
 		95349E632C65D58A00A76EF5 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95349E622C65D58A00A76EF5 /* CurrentUserProfileView.swift */; };
 		95349E672C65D85E00A76EF5 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95349E662C65D85E00A76EF5 /* ProfileHeaderView.swift */; };
 		95349E692C65DAE000A76EF5 /* UserContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95349E682C65DAE000A76EF5 /* UserContentListView.swift */; };
+		9569EEED2C69D81100F3531E /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = 9569EEEC2C69D81100F3531E /* Stripe */; };
+		9569EEEF2C69D81100F3531E /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = 9569EEEE2C69D81100F3531E /* StripeApplePay */; };
+		9569EEF42C69D9AB00F3531E /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EEF32C69D9AB00F3531E /* CheckoutViewModel.swift */; };
+		9569EEF62C69DF0400F3531E /* CheckoutIntentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EEF52C69DF0400F3531E /* CheckoutIntentService.swift */; };
+		9569EEF82C69E87000F3531E /* PaymentConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EEF72C69E87000F3531E /* PaymentConfigService.swift */; };
+		9569EEFA2C69E97B00F3531E /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EEF92C69E97B00F3531E /* CheckoutView.swift */; };
+		9569EEFC2C6AA8F400F3531E /* PaymentGatewayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EEFB2C6AA8F400F3531E /* PaymentGatewayController.swift */; };
+		9569EF042C6ACE7800F3531E /* TicketCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF032C6ACE7800F3531E /* TicketCreationView.swift */; };
+		9569EF062C6AD11600F3531E /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF052C6AD11600F3531E /* TicketService.swift */; };
+		9569EF082C6AD15D00F3531E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF072C6AD15D00F3531E /* Ticket.swift */; };
+		9569EF0A2C6AD88F00F3531E /* TicketCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF092C6AD88F00F3531E /* TicketCreationViewModel.swift */; };
+		9569EF0C2C6AEA6F00F3531E /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF0B2C6AEA6F00F3531E /* TicketCell.swift */; };
+		9569EF112C6B389800F3531E /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF102C6B389800F3531E /* ScannerView.swift */; };
+		9569EF132C6B38A300F3531E /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF122C6B38A300F3531E /* ScannerViewModel.swift */; };
+		9569EF162C6B39D400F3531E /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9569EF152C6B39D400F3531E /* CodeScanner */; };
+		9569EF1C2C6C3A4200F3531E /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569EF1B2C6C3A4200F3531E /* TicketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +110,19 @@
 		95349E622C65D58A00A76EF5 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		95349E662C65D85E00A76EF5 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		95349E682C65DAE000A76EF5 /* UserContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListView.swift; sourceTree = "<group>"; };
+		9569EEF32C69D9AB00F3531E /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		9569EEF52C69DF0400F3531E /* CheckoutIntentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutIntentService.swift; sourceTree = "<group>"; };
+		9569EEF72C69E87000F3531E /* PaymentConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfigService.swift; sourceTree = "<group>"; };
+		9569EEF92C69E97B00F3531E /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		9569EEFB2C6AA8F400F3531E /* PaymentGatewayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayController.swift; sourceTree = "<group>"; };
+		9569EF032C6ACE7800F3531E /* TicketCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCreationView.swift; sourceTree = "<group>"; };
+		9569EF052C6AD11600F3531E /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
+		9569EF072C6AD15D00F3531E /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9569EF092C6AD88F00F3531E /* TicketCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCreationViewModel.swift; sourceTree = "<group>"; };
+		9569EF0B2C6AEA6F00F3531E /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
+		9569EF102C6B389800F3531E /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		9569EF122C6B38A300F3531E /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		9569EF1B2C6C3A4200F3531E /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketView.swift; path = Bouncer/Core/TicketCreation/View/TicketView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +130,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9569EF162C6B39D400F3531E /* CodeScanner in Frameworks */,
 				95349E402C65784000A76EF5 /* FirebaseAnalytics in Frameworks */,
 				95349E462C65784000A76EF5 /* FirebaseStorage in Frameworks */,
 				95349E422C65784000A76EF5 /* FirebaseAuth in Frameworks */,
 				95349E442C65784000A76EF5 /* FirebaseFirestore in Frameworks */,
 				951333232C67112E00892F21 /* Kingfisher in Frameworks */,
+				9569EEED2C69D81100F3531E /* Stripe in Frameworks */,
+				9569EEEF2C69D81100F3531E /* StripeApplePay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +239,10 @@
 				951333292C67234500892F21 /* EventService.swift */,
 				9513331F2C6708D000892F21 /* ImageUploader.swift */,
 				95349E562C65C5B100A76EF5 /* UserService.swift */,
+				9569EEF52C69DF0400F3531E /* CheckoutIntentService.swift */,
+				9569EEF72C69E87000F3531E /* PaymentConfigService.swift */,
+				9569EEFB2C6AA8F400F3531E /* PaymentGatewayController.swift */,
+				9569EF052C6AD11600F3531E /* TicketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +252,7 @@
 			children = (
 				951333242C67223700892F21 /* Event.swift */,
 				95349E542C65A6D400A76EF5 /* User.swift */,
+				9569EF072C6AD15D00F3531E /* Ticket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,11 +271,15 @@
 			children = (
 				95349E1C2C64E99F00A76EF5 /* Activity */,
 				95349E0A2C64CB5C00A76EF5 /* Authentication */,
+				9569EEF02C69D8F400F3531E /* Checkout */,
 				95349E2D2C64F2B800A76EF5 /* Components */,
+				95349E1B2C64E98B00A76EF5 /* EventCreation */,
 				95349E1A2C64E98500A76EF5 /* Explore */,
 				95349E162C64E92900A76EF5 /* Feed */,
-				95349E1B2C64E98B00A76EF5 /* EventCreation */,
 				95349E1D2C64E9C100A76EF5 /* Profile */,
+				9569EF0D2C6B385700F3531E /* Scanner */,
+				9569EF172C6C39FE00F3531E /* Ticket */,
+				9569EEFD2C6ACD0C00F3531E /* TicketCreation */,
 				95349E092C64CB5400A76EF5 /* Root */,
 			);
 			path = Core;
@@ -390,6 +431,7 @@
 				95349E2E2C64F2D200A76EF5 /* CircularProfileImageView.swift */,
 				95349E2B2C64EBD500A76EF5 /* EventCell.swift */,
 				95349E302C64F36500A76EF5 /* UserCell.swift */,
+				9569EF0B2C6AEA6F00F3531E /* TicketCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -422,8 +464,8 @@
 		95349E472C657FA800A76EF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				95349E492C657FC500A76EF5 /* RegistrationViewModel.swift */,
 				95349E522C65A15F00A76EF5 /* LoginViewModel.swift */,
+				95349E492C657FC500A76EF5 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -494,6 +536,105 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		9569EEF02C69D8F400F3531E /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				9569EEF12C69D96700F3531E /* CheckoutView */,
+				9569EEF22C69D96D00F3531E /* CheckoutViewModel */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		9569EEF12C69D96700F3531E /* CheckoutView */ = {
+			isa = PBXGroup;
+			children = (
+				9569EEF92C69E97B00F3531E /* CheckoutView.swift */,
+			);
+			path = CheckoutView;
+			sourceTree = "<group>";
+		};
+		9569EEF22C69D96D00F3531E /* CheckoutViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9569EEF32C69D9AB00F3531E /* CheckoutViewModel.swift */,
+			);
+			path = CheckoutViewModel;
+			sourceTree = "<group>";
+		};
+		9569EEFD2C6ACD0C00F3531E /* TicketCreation */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF022C6ACD3E00F3531E /* ViewModel */,
+				9569EF012C6ACD3900F3531E /* View */,
+			);
+			path = TicketCreation;
+			sourceTree = "<group>";
+		};
+		9569EF012C6ACD3900F3531E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF032C6ACE7800F3531E /* TicketCreationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9569EF022C6ACD3E00F3531E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF092C6AD88F00F3531E /* TicketCreationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9569EF0D2C6B385700F3531E /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF0E2C6B386800F3531E /* View */,
+				9569EF0F2C6B386E00F3531E /* ViewModel */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		9569EF0E2C6B386800F3531E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF102C6B389800F3531E /* ScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9569EF0F2C6B386E00F3531E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF122C6B38A300F3531E /* ScannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9569EF172C6C39FE00F3531E /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF182C6C3A1B00F3531E /* View */,
+				9569EF192C6C3A1F00F3531E /* ViewModel */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		9569EF182C6C3A1B00F3531E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9569EF1B2C6C3A4200F3531E /* TicketView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9569EF192C6C3A1F00F3531E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,6 +657,9 @@
 				95349E432C65784000A76EF5 /* FirebaseFirestore */,
 				95349E452C65784000A76EF5 /* FirebaseStorage */,
 				951333222C67112E00892F21 /* Kingfisher */,
+				9569EEEC2C69D81100F3531E /* Stripe */,
+				9569EEEE2C69D81100F3531E /* StripeApplePay */,
+				9569EF152C6B39D400F3531E /* CodeScanner */,
 			);
 			productName = Bouncer;
 			productReference = 95349DF12C64C98600A76EF5 /* Bouncer.app */;
@@ -548,6 +692,8 @@
 			packageReferences = (
 				95349E3E2C65784000A76EF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				951333212C67112E00892F21 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9569EEEB2C69D81100F3531E /* XCRemoteSwiftPackageReference "stripe-ios" */,
+				9569EF142C6B39D400F3531E /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 95349DF22C64C98600A76EF5 /* Products */;
 			projectDirPath = "";
@@ -577,17 +723,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				95349E2A2C64EAD400A76EF5 /* ActivityView.swift in Sources */,
+				9569EF0C2C6AEA6F00F3531E /* TicketCell.swift in Sources */,
 				95349E4A2C657FC500A76EF5 /* RegistrationViewModel.swift in Sources */,
 				95349E242C64EA7C00A76EF5 /* ProfileView.swift in Sources */,
 				95349E4C2C65817700A76EF5 /* AuthService.swift in Sources */,
 				95349E5F2C65D10A00A76EF5 /* PreviewProvider.swift in Sources */,
 				9513331E2C6706C100892F21 /* EditProfileViewModel.swift in Sources */,
+				9569EF132C6B38A300F3531E /* ScannerViewModel.swift in Sources */,
 				951333332C673DE700892F21 /* Timestamp.swift in Sources */,
 				9513332A2C67234500892F21 /* EventService.swift in Sources */,
+				9569EF1C2C6C3A4200F3531E /* TicketView.swift in Sources */,
 				95349E3B2C65119100A76EF5 /* EditProfileView.swift in Sources */,
 				95349E2C2C64EBD500A76EF5 /* EventCell.swift in Sources */,
 				95349E572C65C5B100A76EF5 /* UserService.swift in Sources */,
 				95349E192C64E95700A76EF5 /* FeedView.swift in Sources */,
+				9569EEFC2C6AA8F400F3531E /* PaymentGatewayController.swift in Sources */,
 				95349E692C65DAE000A76EF5 /* UserContentListView.swift in Sources */,
 				95349E0D2C64CB9500A76EF5 /* LoginView.swift in Sources */,
 				95349E532C65A15F00A76EF5 /* LoginViewModel.swift in Sources */,
@@ -595,23 +745,32 @@
 				951333252C67223700892F21 /* Event.swift in Sources */,
 				95349E2F2C64F2D200A76EF5 /* CircularProfileImageView.swift in Sources */,
 				95349E312C64F36500A76EF5 /* UserCell.swift in Sources */,
+				9569EF112C6B389800F3531E /* ScannerView.swift in Sources */,
 				95349E5D2C65CCD000A76EF5 /* ExploreViewModel.swift in Sources */,
 				9513332D2C672CE400892F21 /* FeedViewModel.swift in Sources */,
+				9569EF082C6AD15D00F3531E /* Ticket.swift in Sources */,
 				95349E262C64EA9D00A76EF5 /* CreateEventView.swift in Sources */,
+				9569EEFA2C69E97B00F3531E /* CheckoutView.swift in Sources */,
 				951333202C6708D000892F21 /* ImageUploader.swift in Sources */,
 				95349E282C64EAB900A76EF5 /* ExploreView.swift in Sources */,
+				9569EF062C6AD11600F3531E /* TicketService.swift in Sources */,
 				95349E502C6599BB00A76EF5 /* ContentViewModel.swift in Sources */,
 				95349E5A2C65C6C700A76EF5 /* CurrentUserProfileViewModel.swift in Sources */,
 				95349DF72C64C98600A76EF5 /* ContentView.swift in Sources */,
 				951333282C67232A00892F21 /* CreateEventViewModel.swift in Sources */,
+				9569EEF82C69E87000F3531E /* PaymentConfigService.swift in Sources */,
 				95349E632C65D58A00A76EF5 /* CurrentUserProfileView.swift in Sources */,
 				95349E342C64F6DD00A76EF5 /* ProfileEventFilter.swift in Sources */,
 				95349E122C64D50700A76EF5 /* BouncerTextFieldModifier.swift in Sources */,
 				95349E672C65D85E00A76EF5 /* ProfileHeaderView.swift in Sources */,
 				95349E152C64D73700A76EF5 /* BouncerTabView.swift in Sources */,
 				95349DF52C64C98600A76EF5 /* BouncerApp.swift in Sources */,
+				9569EF0A2C6AD88F00F3531E /* TicketCreationViewModel.swift in Sources */,
 				95349E0F2C64D3CF00A76EF5 /* RegistrationView.swift in Sources */,
 				95349E552C65A6D400A76EF5 /* User.swift in Sources */,
+				9569EF042C6ACE7800F3531E /* TicketCreationView.swift in Sources */,
+				9569EEF42C69D9AB00F3531E /* CheckoutViewModel.swift in Sources */,
+				9569EEF62C69DF0400F3531E /* CheckoutIntentService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +907,7 @@
 				DEVELOPMENT_TEAM = 63FS5Y6W9W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -777,6 +937,7 @@
 				DEVELOPMENT_TEAM = 63FS5Y6W9W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -835,6 +996,22 @@
 				minimumVersion = 11.0.0;
 			};
 		};
+		9569EEEB2C69D81100F3531E /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.29.0;
+			};
+		};
+		9569EF142C6B39D400F3531E /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -862,6 +1039,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 95349E3E2C65784000A76EF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		9569EEEC2C69D81100F3531E /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9569EEEB2C69D81100F3531E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
+		9569EEEE2C69D81100F3531E /* StripeApplePay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9569EEEB2C69D81100F3531E /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeApplePay;
+		};
+		9569EF152C6B39D400F3531E /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9569EF142C6B39D400F3531E /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

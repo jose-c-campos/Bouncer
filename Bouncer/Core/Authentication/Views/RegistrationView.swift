@@ -37,7 +37,9 @@ struct RegistrationView: View {
                     .modifier(BouncerTextFieldModifier())
             }
             Button {
-                Task { try await viewModel.createUser() }
+                Task {
+                    try await viewModel.createUser()
+                }
             } label: {
                 Text("Sign Up")
                     .font(.subheadline)
@@ -48,6 +50,10 @@ struct RegistrationView: View {
                     .cornerRadius(8)
             }
             .padding(.vertical)
+            
+            Text(viewModel.errorMessage.isEmpty ? "" : viewModel.errorMessage)
+                .font(.footnote)
+                .foregroundColor(.red)
             
             Spacer()
             

@@ -16,6 +16,9 @@ struct ProfileHeaderView: View {
     
     var body: some View {
         HStack(alignment: .top){
+            CircularProfileImageView(user: user, size: .medium)
+                .frame(alignment: .leading)
+            
             VStack(alignment: .leading, spacing: 12) {
                 // Fullname and Username
                 VStack(alignment: .leading, spacing: 4) {
@@ -40,7 +43,6 @@ struct ProfileHeaderView: View {
             
             Spacer()
             
-            CircularProfileImageView(user: user, size: .medium)
         }
     }
 }

@@ -43,7 +43,9 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    Task { try await viewModel.login() }
+                    Task {
+                        try await viewModel.login()
+                    }
                 } label: {
                     Text("Login")
                         .font(.subheadline)
@@ -53,6 +55,10 @@ struct LoginView: View {
                         .background(.black)
                         .cornerRadius(8)
                 }
+                
+                Text(viewModel.validLogin ? "" : "Invalid Login")
+                    .font(.footnote)
+                    .foregroundColor(.red)
                 
                 Spacer()
                 

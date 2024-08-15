@@ -10,12 +10,12 @@ import Foundation
 // Creating this as a model makes it scalebale if we want to add more cases
 enum ProfileEventFilter: Int, CaseIterable, Identifiable {
     case events
-    case replies
+    case tickets
     
     var title: String {
         switch self {
         case .events: return "Events"
-        case .replies: return "Replies"
+        case .tickets: return "Tickets"
         }
     }
     

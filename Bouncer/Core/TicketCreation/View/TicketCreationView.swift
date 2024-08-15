@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct TicketView: View {
-    @StateObject var viewModel: TicketViewModel
+struct TicketCreationView: View {
+    @StateObject var viewModel: TicketCreationViewModel
     private var currentUser: User? {
         return viewModel.currentUser
     }
@@ -48,9 +48,9 @@ struct TicketView: View {
 }
 
 
-struct TicketView_Previews: PreviewProvider {
+struct TicketCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = TicketViewModel(event: dev.event)
-        TicketView(viewModel: viewModel)
+        let viewModel = TicketCreationViewModel(event: dev.event)
+        TicketCreationView(viewModel: viewModel)
     }
 }

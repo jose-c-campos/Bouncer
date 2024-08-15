@@ -12,6 +12,10 @@ import FirebaseFirestore
 
 class AuthService {
     @Published var userSession: FirebaseAuth.User?  // Checks if user is authentic: used to route pages
+    @Published var errorMessage = ""
+    let usernameIsTakenErrorMessage = "Username is already taken"
+    let emailIncorrectFormatErrorMessage = "Email is incorrectly formatted"
+    
     
     static let shared = AuthService()
     
@@ -21,7 +25,7 @@ class AuthService {
     }
     
     @MainActor
-    func login(withEmail email: String, password: String) async throws {
+    func login(withEmail email: String, password: String) async throws -> Bool {
         do {
             let result = try await Auth.auth().signIn(
                 withEmail: email,
@@ -29,8 +33,10 @@ class AuthService {
             )
             self.userSession = result.user
             try await UserService.shared.fetchCurrentUser()
+            return true
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
+            return false
         }
     }
     
@@ -40,19 +46,32 @@ class AuthService {
         password: String,
         fullname: String,
         username: String
-    ) async throws {
+    ) async throws -> String {
         do {
+            // Check if username already exists
+           let usernameExists = try await checkIfUsernameExists(username)
+           if usernameExists {
+               errorMessage = usernameIsTakenErrorMessage
+               return usernameIsTakenErrorMessage
+           }
             let result = try await Auth.auth().createUser(
                 withEmail: email,
                 password: password
             )
             self.userSession = result.user
-            try  await uploadUserData(withEmail: email, fullname: fullname, username: username, id: result.user.uid)
+            try  await uploadUserData(
+                withEmail: email,
+                fullname: fullname,
+                username: username,
+                id: result.user.uid
+            )
             print("DEBUG: Created users \(result.user.uid)")
+           return ""
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
+            return error.localizedDescription
         }
-        
     }
     
     func signOut() {
@@ -77,6 +96,16 @@ class AuthService {
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try await Firestore.firestore().collection("users").document(id).setData(userData)
         UserService.shared.currentUser = user
+    }
+    
+    // Check if the username already exists in the Firestore collection
+    private func checkIfUsernameExists(_ username: String) async throws -> Bool {
+        let querySnapshot = try await Firestore.firestore()
+            .collection("users")
+            .whereField("username", isEqualTo: username)
+            .getDocuments()
+        
+        return !querySnapshot.documents.isEmpty
     }
 }
 

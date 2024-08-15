@@ -1,5 +1,5 @@
 {
-  "originHash" : "dacfd17cdf8fa9f962991925a9162eb62e278dab4974c56cd997ab2b87892aa5",
+  "originHash" : "e291961fe8a56b59875d2d8606f66b8311bb4b3125e24ae104e3f36377a7bea4",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "21fe1af9be463a359aaf8d96789ef73fc3760d09",
         "version" : "11.0.1"
+      }
+    },
+    {
+      "identity" : "codescanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/CodeScanner",
+      "state" : {
+        "revision" : "34da57fb63b47add20de8a85da58191523ccce57",
+        "version" : "2.5.0"
       }
     },
     {
@@ -116,6 +125,15 @@
       "state" : {
         "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
         "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "stripe-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stripe/stripe-ios",
+      "state" : {
+        "revision" : "f828169462b31e3fde89bdd7eb7ea24dccde0947",
+        "version" : "23.29.0"
       }
     },
     {
