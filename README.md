@@ -11,5 +11,6 @@
 ## User Interface
 
 <img src="https://github.com/user-attachments/assets/ab6e0e66-09b9-4052-8c7a-c12fd70db703" width=250 />
+<img src="https://github.com/user-attachments/assets/1628f3e0-1021-4127-9ef8-0884b5dd3cfe" width=250 />
 <img src="https://github.com/user-attachments/assets/94d3101d-c84a-43d0-b4ea-77ef475cec3b" width=250 />
-
+<img src="https://github.com/user-attachments/assets/4f538bb3-dc44-47b2-ae19-5dc7b1113457" width=250 />
