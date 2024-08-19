@@ -1,6 +1,6 @@
 <span align="left">
   <img src="https://github.com/user-attachments/assets/5153c155-bdba-48fc-b836-2e0d1c15f3c1" width=40 align="left" />
-  <h1 align="left">Bouncer: iOS App to Discover/Promote Events</h1>
+  <h1 align="left">Bouncer: Discover/Promote Events on iOS</h1>
 </span>
 
 ## About
