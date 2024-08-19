@@ -10,6 +10,6 @@
 
 ## User Interface
 
-<img src="https://github.com/user-attachments/assets/ab6e0e66-09b9-4052-8c7a-c12fd70db703" />
-<img src="https://github.com/user-attachments/assets/94d3101d-c84a-43d0-b4ea-77ef475cec3b" />
+<img src="https://github.com/user-attachments/assets/ab6e0e66-09b9-4052-8c7a-c12fd70db703" width=100 />
+<img src="https://github.com/user-attachments/assets/94d3101d-c84a-43d0-b4ea-77ef475cec3b" width=100 />
 
