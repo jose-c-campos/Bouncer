@@ -10,7 +10,11 @@
 
 ## User Interface
 
-<img src="https://github.com/user-attachments/assets/ab6e0e66-09b9-4052-8c7a-c12fd70db703" width=350 />
-<img src="https://github.com/user-attachments/assets/1628f3e0-1021-4127-9ef8-0884b5dd3cfe" width=350 />
-<img src="https://github.com/user-attachments/assets/94d3101d-c84a-43d0-b4ea-77ef475cec3b" width=350 />
-<img src="https://github.com/user-attachments/assets/4f538bb3-dc44-47b2-ae19-5dc7b1113457" width=350 />
+<img src="https://github.com/user-attachments/assets/ab6e0e66-09b9-4052-8c7a-c12fd70db703" width=300 />
+<img src="https://github.com/user-attachments/assets/1628f3e0-1021-4127-9ef8-0884b5dd3cfe" width=300 />
+<img src="https://github.com/user-attachments/assets/94d3101d-c84a-43d0-b4ea-77ef475cec3b" width=300 />
+<img src="https://github.com/user-attachments/assets/4f538bb3-dc44-47b2-ae19-5dc7b1113457" width=300 />
+<img src="https://github.com/user-attachments/assets/4f538bb3-dc44-47b2-ae19-5dc7b1113457" width=300 />
+<img src="https://github.com/user-attachments/assets/2e98680f-f55e-4e23-afe0-6c4b87138d69" width=300 />
+<img src="https://github.com/user-attachments/assets/dad5b403-7d72-4df4-8696-97ed126c35b2" width=300 />
+
